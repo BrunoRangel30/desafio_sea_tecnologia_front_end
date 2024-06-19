@@ -33,7 +33,6 @@ const Proximo_anterior = () => {
     let isConcluido = (passos[indexAtual - 1].concluido); 
     isConcluido ?   dispatch(toggleIsSim(true)) : dispatch(toggleIsSim(false))
     
-   // dispatch(toggleIsSim(false));
   };
 
   return (

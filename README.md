@@ -1,6 +1,6 @@
 # Nome do Projeto
 
-Este projeto foi desenvolvido como parte do processo de avaliação para a vaga de Desenvolvedor React. O objetivo é demonstrar habilidades em desenvolvimento em React e as demais demais tecnologias front-end.
+Este projeto foi desenvolvido como parte do processo de avaliação para a vaga de Desenvolvedor React. O objetivo é demonstrar habilidades em desenvolvimento em React e as  demais tecnologias front-end.
 
 ## Índice
 - [Dependências](#sobre)

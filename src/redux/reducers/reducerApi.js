@@ -9,6 +9,7 @@ const initialState = {
 
 const funcionarioReducer = (state = initialState, action) => {
   switch (action.type) {
+    //adicionar funcionario
       case 'ADD_FUNCIONARIO_REQUEST':
       case 'UPDATE_FUNCIONARIO_REQUEST':
       case 'DELETE_FUNCIONARIO_REQUEST':
@@ -21,12 +22,12 @@ const funcionarioReducer = (state = initialState, action) => {
           return {
               ...state, loading: false, mensagem: 'Funcionário cadastrado com sucesso!', funcionarios: [...state.funcionarios, action.payload]
           };
-
+      //buscar funcionarios
       case 'GET_FUNCIONARIOS_SUCCESSO':
           return {
               ...state, funcionarios: action.payload
           };
-
+        //atualizar funcionarios
       case 'UPDATE_FUNCIONARIO_SUCCESSO':
           return {
               ...state,
@@ -36,7 +37,7 @@ const funcionarioReducer = (state = initialState, action) => {
                       func._id === action.payload._id ? action.payload : func
                   )
           };
-
+    //deletar funcionarios
       case 'DELETE_FUNCIONARIO_SUCCESSO':
           return {
               ...state,
@@ -44,6 +45,7 @@ const funcionarioReducer = (state = initialState, action) => {
                   mensagem: 'Funcionário excluído com sucesso!',
                   funcionarios: state.funcionarios.filter(func => func._id !== action.payload)
           };
+      //filtros
       case 'FILTRAR_FUNCIONARIOS_ATIVOS':
           return {
               ...state,
@@ -55,12 +57,13 @@ const funcionarioReducer = (state = initialState, action) => {
               ...state,
               funcionarios: state.funcionariosAux
           };
+      //armazena o funcionario selecionado para edição para o formulario
       case 'FUNCIONARIO_EDICAO':
           return {
               ...state,
               funcionarioEdicao: action.payload
           };
-
+     //tratamento de erros
       case 'ADD_FUNCIONARIO_FALHA':
       case 'GET_FUNCIONARIOS_FALHA':
       case 'UPDATE_FUNCIONARIO_FALHA':
